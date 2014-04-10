@@ -21,22 +21,26 @@ def win_check(player, board):
 
         # Checks the players DIAGONAL spaces 
         if board[0][0] == player and board[1][1] == player and board[2][2] == player:
-            print ("Backslash \ Diagonal Winner!")
+            print (player + " wins the game! Backslash \ Diagonal")
+            return True
             break
 
         elif board[0][2] == player and board[1][1] == player and board[2][0] == player:
-            print ("Slash / Diagonal Winner!")
+            print (player + "'s wins the game! Slash / Diagonal Winner!")
+            return True
             break
 
         
         # Checks the players COLUMN spaces
         if board[row][count] == player and board[row + 1][count] == player and board[row + 2][count] == player:
-            print ("Column " + str(count) + " Winner!" )
+            print (player + "'s wins the game! Column " + str(count) + " Winner!" )
+            return True
             break
         
         # Checks the players ROW spaces
         elif board[count][col] == player and board[count][col + 1] == player and board[count][col + 2] == player:
-            print ("Row " + str(count) + " Winner!")
+            print (player + "'s wins the game! Row " + str(count) + " Winner!")
+            return True
             break
 
         else:
@@ -71,24 +75,31 @@ for turn in range(3):
 
     print ('')
     print ("***** PLAYER 1'S MOVE *****")
+    print ('')
     
     player_row = int(input('Choose Row: '))
     player_col = int(input('Choose Column: '))
 
     x_space(player_row, player_col)
-    win_check('X', board)
+    if win_check('X', board) == True:
+        print ('')
+        print_board(board)
+        break
 
     print ('')
     print_board(board)
     print ('')
-    
     print ("***** PLAYER 2'S MOVE *****")
+    print ('')
 
     player_row = int(input('Choose Row: '))
     player_col = int(input('Choose Column: '))
 
     o_space(player_row, player_col)
-    win_check('O', board)
+    if win_check('O', board) == True:
+        print ('')
+        print_board(board)
+        break
 
     print_board(board)
 
