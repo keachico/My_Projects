@@ -1,5 +1,32 @@
 import random
 
+paper = '''
+          _______
+      ---'   ____)____
+                ______)
+                _______)
+               _______)
+      ---.__________)
+      '''
+
+scissors = '''
+          _______
+      ---'   ____)____
+                ______)
+             __________)
+            (____)
+      ---.__(___)
+      '''
+
+rock = '''
+          _______
+      ---'   ____)
+            (_____)
+            (_____)
+            (____)
+      ---.__(___)
+      '''
+
 def PaperScissorsRock():
     name = input("What is your name? \n")
     
@@ -35,22 +62,31 @@ def PaperScissorsRock():
 
             print ('')
             print ("PAPER, SCISSORS, ROCK! \n")
-            print ("The computer throws %s \n" % computerThrow)
+            print ("The computer throws %s" % computerThrow)
 
             if playerThrow.lower() == "paper":
                 
                 if computerThrow == "rock":
                     winCount[0] += 1
                     gameCount += 1
+                    print (rock)
+                    print ("You throw paper.")
+                    print (paper)
                     print ("Paper beats Rock! You win!")
 
                 elif computerThrow == "scissors":
                     winCount[1] += 1
                     gameCount += 1
+                    print (scissors)
+                    print ("You throw paper.")
+                    print (paper)
                     print ("Paper loses to Scissors! You lose!")
 
                 elif computerThrow == "paper":
                     winCount[2] += 1
+                    print (paper)
+                    print ("You throw paper.")
+                    print (paper)
                     print ("You both threw Paper! It's a draw!")
 
             if playerThrow.lower() == "scissors":
@@ -58,15 +94,24 @@ def PaperScissorsRock():
                 if computerThrow == "paper":
                     winCount[0] += 1
                     gameCount += 1
+                    print (paper)
+                    print ("You throw paper.")
+                    print (scissors)
                     print ("Scissors beats Paper! You win!")
 
                 elif computerThrow == "rock":
                     winCount[1] += 1
                     gameCount += 1
+                    print (rock)
+                    print ("You throw scissors.")
+                    print (scissors)
                     print ("Scissors loses to Rock! You lose!")
 
                 elif computerThrow == "scissors":
                     winCount[2] += 1
+                    print (scissors)
+                    print ("You throw scissors.")
+                    print (scissors)
                     print ("You both threw Scissors! It's a draw!")
 
             if playerThrow.lower() == "rock":
@@ -74,15 +119,24 @@ def PaperScissorsRock():
                 if computerThrow == "scissors":
                     winCount[0] += 1
                     gameCount += 1
+                    print (scissors)
+                    print ("You throw rock.")
+                    print (rock)
                     print ("Rock beats Scissors! You win!")
 
                 elif computerThrow == "paper":
                     winCount[1] += 1
                     gameCount += 1
+                    print (paper)
+                    print ("You throw rock.")
+                    print (rock)
                     print ("Rock loses to Paper! You lose!")
 
                 elif computerThrow == "rock":
                     winCount[2] += 1
+                    print (rock)
+                    print ("You throw rock.")
+                    print (rock)
                     print ("You both threw Rock! It's a draw!")
 
             print ('\n ******************************************************************* \n')
